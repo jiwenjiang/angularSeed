@@ -1,0 +1,207 @@
+:host {
+  display: block;
+}
+
+@media (min-width: 1200px)  {
+  main.menu-collapsed  {
+    margin-left: 50px;
+  }
+}
+header {
+    background-color: #1C2B36;
+    position: fixed;
+    z-index: 904;
+    box-shadow: 2px 0 3px rgba(0,0,0,.5);
+    height: 66px;
+    width: 100%;
+    min-width: 320px;
+    padding: 0 32px 0 40px;
+    .logo{
+      color: #fff;
+      display: block;
+      font-size: 24px;
+      white-space: nowrap;
+      float: left;
+      line-height: 60px
+    }
+    .collapse-menu-link{
+      font-size: 20px;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      line-height: 42px;
+      color: #fff;
+      padding: 0;
+      float: left;
+      margin: 11px 0 0 25px;
+    }
+    .user-file-msg{
+      min-width: 170px;
+      margin-top: 10px;
+    }
+    .user-file{
+      margin-right: 12px;
+      transition: all .15s ease-in-out;
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      opacity: 1;
+      position: relative;
+      .profile-toggle-link{
+        display: block;
+        cursor: pointer;
+      }
+      img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+    }
+    .top-dropdown-menu.profile-dropdown{
+      width: 145px;
+      top: 55px;
+      right: -25px;
+    }
+    .top-dropdown-menu{
+      left: -100px;
+      i.dropdown-arr{
+        right: 25px;
+        position: absolute;
+        top: -22px;
+        right: 42px;
+        display: block;
+        width: 0;
+        height: 0;
+        border: 11px solid transparent;
+        border-bottom-color: rgba(0,0,0,.15);
+        &:after{
+          top: -9px;
+          left: 0;
+          margin-left: -10px;
+          content: " ";
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          border: 10px solid transparent;
+          border-bottom-color: #fff;
+        }
+      }
+    }
+    .msg-center{
+      padding: 0;
+      list-style: none;
+      margin: 13px 47px 0 0;
+      li{
+        float: left;
+        list-style: none;
+        &:not(:first-child){
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+.menu-collapsed .sidebar{
+  width: 52px;
+  .sidebar-sublist{
+    display: none;
+  }
+  .glyphicon-chevron-down{
+    opacity: 0;
+  }
+}
+.sidebar{
+  width: 180px;
+  top: 66px;
+  left: 0;
+  z-index: 904;
+  display: block;
+  min-height: 100%;
+  background-color: #1C2B36;
+  height: 100%;
+  position: fixed;
+}
+
+.sidebar-list{
+  margin: 0;
+  padding: 18px 0 0;
+  list-style: none;
+  a{
+    &.sidebar-list-link{
+      color: #fff;
+      overflow: hidden;
+      text-shadow: none;
+      white-space: nowrap;
+      display: block;
+      height: 42px;
+      padding-left: 18px;
+      font-size: 13px;
+      text-decoration: none;
+      line-height: 42px;
+      cursor: pointer;
+      &:hover{
+        color: #209e91;
+      }
+      b{
+        display: block;
+        opacity: 1;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        text-shadow: none;
+        font-size: 18px;
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        transition: transform .2s linear,-webkit-transform .2s linear;
+      }
+      i{
+        margin-right: 18px;
+        width: 16px;
+        display: inline-block;
+      }
+    }
+  }
+  li{
+    display: block;
+    float: none;
+    padding: 0;
+    border-bottom: none;
+    position: relative;
+  }
+  .sidebar-list-link.collapsed b{
+    transform: rotate(180deg)
+  }
+}
+
+.sidebar-sublist {
+  padding: 0;
+  list-style: none;
+  position: relative;
+  &>li {
+    a {
+      display: block;
+      text-shadow: none;
+      font-size: 13px;
+      text-decoration: none;
+      color: #fff;
+      padding-left: 52px;
+      height: auto;
+      line-height: 29px;
+    }
+  }
+}
+main {
+  margin-left: 180px;
+  padding: 66px 0 34px;
+  min-height: 500px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+}

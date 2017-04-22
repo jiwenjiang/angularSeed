@@ -1,0 +1,61 @@
+{
+  "name": "angular1.6-webpack-es6",
+  "version": "1.0.0",
+  "description": "ES6 + Webpack seed for Angular 1.6",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --open --progress",
+    "build": "rimraf www && webpack -p --bail --progress --profile --colors",
+    "build-dev": "rimraf www && webpack --bail --progress --profile --colors",
+    "pretest": "eslint src --ext .js",
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiwenjiang/angularSeed"
+  },
+  "keywords": [
+    "webpack",
+    "ES6",
+    "ES2015",
+    "Angular1.x",
+    "Seed"
+  ],
+  "author": "j_bleach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiwenjiang/angularSeed"
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.6.4",
+    "angular-route": "^1.5.7",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "^3.3.6",
+    "md5": "^2.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.23.1",
+    "eslint": "^3.0.1",
+    "eslint-loader": "^1.4.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^0.9.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.3",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

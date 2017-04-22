@@ -1,0 +1,17 @@
+<h2>{{$ctrl.title}}</h2>
+<table class="table">
+    <thead>
+        <tr >
+            <td ng-if="$ctrl.isShowCheckbox"><input type="checkbox" ng-model="$ctrl.isAll" ng-click="$ctrl.setAll()"/></td>
+            <td ng-repeat="head in $ctrl.tHead track by $index" ng-if="!first">{{head}}</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tr ng-repeat="list in $ctrl.data track by $index">
+        <td ng-if="$ctrl.isShowCheckbox"><input type="checkbox" ng-checked="list.isSelected"/></td>
+        <td ng-repeat="item in list.list track by $index">{{::item}}</td>
+        <td>
+            <button class="{{btn.class}}" ng-repeat="btn in $ctrl.btns track by $index" ng-click="btn.event(list)">{{btn.name}}</button>
+        </td>
+    </tr>
+</table>

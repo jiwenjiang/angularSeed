@@ -1,0 +1,66 @@
+<header>
+    <a class="logo clearfix"><span>Blur</span>Admin</a>
+    <a class="collapse-menu-link glyphicon glyphicon-list" ng-click="homeCtrl.isShowSidebar()"></a>
+    <div class="pull-right user-file-msg">
+        <div class="user-file pull-right dropdown" >
+            <a class="profile-toggle-link dropdown-toggle" data-toggle="dropdown" href="#">
+                <img ng-src="images/ng-logo.png">
+            </a>
+            <ul class="top-dropdown-menu profile-dropdown dropdown-menu">
+                <li><i class="dropdown-arr"></i></li>
+                <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+                <li><a href=""><i class="fa fa-cog"></i>Settings</a></li>
+                <li><a href="" class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+            </ul>
+        </div>
+        <div class="pull-right">
+            <ul class="msg-center">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                    </a>
+                    <ul class="dropdown-menu top-dropdown-menu">
+                        <li><i class="dropdown-arr"></i></li>
+                        <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+                        <li><a href=""><i class="fa fa-cog"></i>Settings</a></li>
+                        <li><a href="" class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                    </a>
+                    <ul class="dropdown-menu top-dropdown-menu">
+                        <li><i class="dropdown-arr"></i></li>
+                        <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+                        <li><a href=""><i class="fa fa-cog"></i>Settings</a></li>
+                        <li><a href="" class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<sidebar ng-class="{'menu-collapsed': homeCtrl.isShowSidebarBool}">
+    <aside class="sidebar">
+        <div style="position: relative;overflow: hidden;width: auto;height: 864px;">
+            <ul class="sidebar-list" id="sidebar-list">
+                <li ng-repeat="item in ::homeCtrl.menuItems track by $index">
+                    <a class="sidebar-list-link" href="#"  ng-click="isCollapsed = !isCollapsed">
+                        <i class="glyphicon glyphicon-home" ></i>
+                        <span>{{item.name}}</span>
+                        <b class="glyphicon glyphicon-chevron-down" ng-if="::item.subMenu"></b>
+                    </a>
+                    <ul ng-if="::item.subMenu" class="sidebar-sublist" uib-collapse="isCollapsed">
+                        <li ng-repeat="subitem in ::item.subMenu" >
+                            <a href="#">{{subitem.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</sidebar>
+<main ng-class="{'menu-collapsed': homeCtrl.isShowSidebarBool}">
+    <div ui-view></div>
+</main>
