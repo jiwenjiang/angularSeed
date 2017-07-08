@@ -32,7 +32,7 @@ angular1.6+webpack+es6
 
 ## 项目运行(Probject running)
 
-1.克隆项目到本地 : git clone https://github.com/webfansplz/xcMusic.git  
+1.克隆项目到本地 : git clone https://github.com/jiwenjiang/angularSeed.git 
 
 2.安装依赖环境 : npm install      
 
