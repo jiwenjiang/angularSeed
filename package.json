@@ -32,7 +32,8 @@
     "angular-route": "^1.5.7",
     "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.6",
-    "md5": "^2.1.0"
+    "md5": "^2.1.0",
+    "moment": "^2.18.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",

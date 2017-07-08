@@ -8,16 +8,8 @@ export default function routing($stateProvider, $locationProvider, $urlRouterPro
             url: '/login',
             template: '<login></login>'
         })
-        .state('regist', {
-            url: '/regist',
-            template: '<register></register>'
-        })
         .state('home', {
             url: '/home',
             template: '<home></home>'
-        })
-        .state('home.about', {
-            url: '/about',
-            template: '<about></about>'
         })
 }
