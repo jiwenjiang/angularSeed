@@ -12,18 +12,18 @@ let writes = [`${name}.js`, `${name}.html`, `${name}.less`, `index.js`];
 let reads = [`${basepath}cptTemp/index.js`, `${basepath}cptTemp/cptTemp.js`];
 let file = [];
 
-
+//检测是否存在文件夹
 let exists = function () {
     return new Promise((res, rej) => {
         (async function () {
             for (let a of path) {
-                console.log(a)
                 fs.existsSync(basepath + a) ? basepath = `${basepath}${a}/` : await mkdir(a);
             }
             res(basepath);
         })()
     })
 }
+//建立文件夹
 let mkdir = function (a) {
     return new Promise((res, rej) => {
         fs.mkdir(basepath + a, (err) => {
@@ -33,6 +33,7 @@ let mkdir = function (a) {
         });
     })
 }
+//读取模板文件内容，并替换为目标组件
 let readFile = function () {
     return new Promise((res) => {
         for (let a of reads) {
@@ -44,6 +45,7 @@ let readFile = function () {
         res(file);
     })
 }
+//生成文件，并填入之前读取的文件内容
 let writeFile = function (file) {
     return new Promise((res, rej) => {
         (async function () {
