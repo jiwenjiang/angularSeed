@@ -2,6 +2,7 @@
  * Created by 51375 on 2017/7/8.
  */
 
+console.log(process.argv)
 let fs = require('fs');
 let basepath = 'src/components/';
 let moment = require('moment');
@@ -14,7 +15,7 @@ let file = [];
 
 //检测是否存在文件夹
 let exists = function () {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         (async function () {
             for (let a of path) {
                 fs.existsSync(basepath + a) ? basepath = `${basepath}${a}/` : await mkdir(a);
