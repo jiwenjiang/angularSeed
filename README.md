@@ -45,6 +45,6 @@ angular1.6+webpack+es6
 运行命令：node set foo
 会在conponents文件下，生成foo文件夹，并生成foo.html,foo.less,foo.js,index.js等四个文件，并自动填充部分通用代码。
 
-##2017/07/19 提交修改
+## 2017/07/19 提交修改
 新增windows用户下，获取c盘用户名，自动填充为index.js等文件的作者的功能（不是开机登录名），即c:users\xxx中的xxx。
 修改c盘文件夹名称方法请参考：http://blog.csdn.net/j_bleach/article/details/75449161
