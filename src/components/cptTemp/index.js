@@ -1,5 +1,5 @@
 /**
- * Created by 51375 on time
+ * Created by author on time
  */
 
 import tem from './temp.html';

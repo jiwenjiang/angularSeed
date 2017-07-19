@@ -2,7 +2,6 @@
  * Created by 51375 on 2017/7/8.
  */
 
-console.log(process.argv)
 let fs = require('fs');
 let basepath = 'src/components/';
 let moment = require('moment');
@@ -12,10 +11,14 @@ let name = path[path.length - 1];
 let writes = [`${name}.js`, `${name}.html`, `${name}.less`, `index.js`];
 let reads = [`${basepath}cptTemp/index.js`, `${basepath}cptTemp/cptTemp.js`];
 let file = [];
+let author = require('os').homedir().split('\\').pop();
+
+
+
 
 //检测是否存在文件夹
 let exists = function () {
-    return new Promise((res) => {
+    return new Promise((res, rej) => {
         (async function () {
             for (let a of path) {
                 fs.existsSync(basepath + a) ? basepath = `${basepath}${a}/` : await mkdir(a);
@@ -40,7 +43,8 @@ let readFile = function () {
         for (let a of reads) {
             let text = fs.readFileSync(a).toString();
             text = text.replace(/time/g, moment().format('YYYY/MM/DD'))
-                .replace(/temp/g, name);
+                .replace(/temp/g, name)
+                .replace(/author/g, author)
             file.push(text)
         }
         res(file);
@@ -65,6 +69,7 @@ async function creatCpt() {
         await exists();
         await readFile()
         await writeFile(await readFile());
+        return console.log(`Successfully created ${name} component`)
     }
     catch (err) {
         console.error(err);
