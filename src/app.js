@@ -4,7 +4,7 @@ import components from './components';
 import services from './server'
 import commonComponents from './commonComponents';
 import appRouter from './config/app.router';
-import './css/main.less';
+import './assets/css/main.less';
 
 
 import style from './app.less';

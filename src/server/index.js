@@ -4,9 +4,6 @@
 
 import http from './http'
 
-console.log(http)
-
-
 
 export default angular.module('services', [
     http
