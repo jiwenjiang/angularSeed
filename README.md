@@ -1,4 +1,4 @@
-## angularSeed https://img.shields.io/badge/node-v7.8.0-green.svg
+## angularSeed 
    
 ## 技术栈 (technology)
 
