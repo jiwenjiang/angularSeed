@@ -1,5 +1,7 @@
 'use strict';
 // Modules
+const path = require('path');
+var APP_PATH = path.resolve(__dirname, 'src');
 const webpack = require('webpack');
 const helpers = require('./webpack/helpers');
 const autoprefixer = require('autoprefixer');
@@ -15,7 +17,7 @@ const isProd = ENV === 'build';
 
 module.exports = function () {
     const config = {
-        context: helpers.root("./src"),
+        context: helpers.root('./src'),
 
         entry: {
             'vendor': ['angular', 'angular-ui-router'],
@@ -89,14 +91,14 @@ module.exports = function () {
                  */
                 {
                     test: /\.less$/,
-                    exclude: helpers.root("./src/css/main.less"),
-                    loader: ExtractTextPlugin.extract("css!postcss!less")
+                    exclude: helpers.root('./src/css/main.less'),
+                    loader: ExtractTextPlugin.extract('css!postcss!less')
                 },
                 //{test: /\.less$/, loader: extractLESS.extract(['css', 'postcss!less'])},
                 //all css required in src/app files will be merged in js files
                 {
                     test: /\.less/,
-                    include: helpers.root("./src/css/main.less"),
+                    include: helpers.root('./src/css/main.less'),
                     loader: 'style!css!postcss!less'
                 },
 
@@ -156,7 +158,7 @@ module.exports = function () {
                 chunksSortMode: 'dependency'
             }),
             new HtmlWebpackPlugin({
-                filename: "app.other.html",
+                filename: 'app.other.html',
                 template: helpers.root('./src/index.html'),
                 //inject        : 'body',
                 chunks: ['commons.chunk.js', 'vendor'],
@@ -192,6 +194,15 @@ module.exports = function () {
             colors: true,
             historyApiFallback: true,
             port: 7070
+        },
+        resolve: {
+            alias: {
+                _components: path.resolve(APP_PATH, 'components'),
+                _commonComponents: path.resolve(APP_PATH, 'commonComponents'),
+                _config: path.resolve(APP_PATH, 'config'),
+                _assets: path.resolve(APP_PATH, 'assets'),
+                _server: path.resolve(APP_PATH, 'server')
+            }
         }
     };
 

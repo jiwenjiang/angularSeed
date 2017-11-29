@@ -1,7 +1,8 @@
 /**
  * Created by 51375 on 2017/7/8.
  */
-// import url from '../../config/system.js';
+import url from '_config/system.js';
+console.log('相对路径配置：'+JSON.stringify(url));
 
 class loginCtrl {
     constructor(http) {
