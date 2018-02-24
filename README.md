@@ -55,3 +55,6 @@ angular1.6+webpack+es6
 
 ## 2017/11/29 提交修改
 新增相对路径配置：_xx 重定向至xx目录
+
+## 文章参考
+https://segmentfault.com/a/1190000009246295
